@@ -2,8 +2,10 @@ import React from "react";
 import Card from "./Card";
 import Grid from "@mui/material/Grid";
 import { makeStyles } from "@mui/styles";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
+import { useContext } from 'react';
+import { Context } from "../App";
 
 const useStyles = makeStyles({
   gridContainer: {
@@ -14,7 +16,7 @@ const useStyles = makeStyles({
 
 export default function GridCont() {
   const classes = useStyles();
-  const [data, setData] = useState([]);
+  let { data, setData } = useContext(Context);
   useEffect(() => {
     axios
       .get("https://swapi.py4e.com/api/films/")

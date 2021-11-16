@@ -1,19 +1,19 @@
-import { AppBar, Toolbar, Typography, Container } from "@mui/material/";
+import { Toolbar, Typography} from "@mui/material/";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
     top: "auto",
-    bottom: 0,
+    bottom: 0
   },
   typo: {
     flexGrow: 1,
-    textAlign: "center",
+    textAlign: "center"
   },
   offset: theme.mixins.toolbar,
   container: {
-    display: "flex",
-  },
+    display: "flex"
+  }
 }));
 
 export default function Footer() {
@@ -21,15 +21,12 @@ export default function Footer() {
   return (
     <div>
       <div className={classes.offset}></div>
-      <AppBar position="static" color="primary" className={classes.appBar}>
-        <Container className={classes.container}>
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Star Wars Movies
-            </Typography>
-          </Toolbar>
-        </Container>
-      </AppBar>
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          2021 ITK Practice
+        </Typography>
+      </Toolbar>
     </div>
   );
 }
+

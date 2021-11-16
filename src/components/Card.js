@@ -7,9 +7,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material//Typography";
 import BasicModal from "./BasicModal";
 import { useState } from "react";
+import { useContext } from 'react';
+import { Context } from "../App";
 import CardMedia from '@mui/material/CardMedia';
 import PropTypes from 'prop-types';
-import { data } from "../resources/movies-img";
 
 const useStyles = makeStyles({
   root: {
@@ -37,6 +38,7 @@ OutlinedCard.propTypes = {
 }
 
 export default function OutlinedCard(props) {
+  let { images } = useContext(Context);
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
     setIsOpen(true);
@@ -53,7 +55,7 @@ export default function OutlinedCard(props) {
         <CardMedia
           component="img"
           height="194"
-          image={ data.find((x) => x.id === episode_id).img}
+          image={ images.find((x) => x.id === episode_id).img  }
           alt={title}
         />
         <Typography
